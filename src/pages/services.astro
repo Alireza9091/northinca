@@ -2,13 +2,31 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import { WorldMap } from '../components/react/WorldMap';
 import { keyServices, serviceScopes } from '../data/services';
+
+const mapDots = [
+  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 51.50, lng: -0.12 } }, // Toronto -> London
+  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 35.67, lng: 139.65 } }, // Toronto -> Tokyo
+  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 25.20, lng: 55.27 } }, // Toronto -> Dubai
+  { start: { lat: 43.65, lng: -79.38 }, end: { lat: -33.86, lng: 151.20 } }, // Toronto -> Sydney
+  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 48.85, lng: 2.35 } }, // Toronto -> Paris
+];
 ---
 
 <BaseLayout title="Services">
   <div class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
+      <!-- Hero Map -->
+      <div class="mb-20">
+        <div class="text-center mb-10">
+           <h1 class="text-4xl md:text-5xl font-bold text-[#233a6c] mb-6">Global Distribution Network</h1>
+           <p class="text-xl text-gray-600 max-w-3xl mx-auto">Connecting Canada to the world with our extensive logistics and supply chain solutions.</p>
+        </div>
+        <WorldMap client:visible dots={mapDots} lineColor="#233a6c" />
+      </div>
+
       <!-- Key Services -->
       <div class="mb-24">
         <SectionHeading title="Key Services" center />

@@ -30,10 +30,47 @@ export const csr = [
   }
 ];
 
-export const team: TeamMember[] = [
-  { name: "Amir Afshar", role: "President" },
-  { name: "Solmaz Khalvati", role: "Director" },
-  { name: "Hadi Mortazavi", role: "Vice-president" },
-  { name: "Alireza Aleyasin", role: "Medical Adviser" },
-  { name: "Omid Sangari", role: "Natural Health product Advisor" }
+export const team = [
+  {
+    name: "Amir Afshar",
+    role: "President",
+    image: "/images/team/amir_afshar.png",
+    bio: "Leading Northinca with strict adherence to quality and global standards.",
+    handle: "amir"
+  },
+  {
+    name: "Solmaz Khalvati",
+    role: "Director",
+    image: "/images/team/solmaz.png",
+    bio: "Overseeing strategic direction and operational excellence.",
+    handle: "solmaz"
+  },
+  {
+    name: "Hadi Mortazavi",
+    role: "Vice-president",
+    image: "/images/team/hadi.png",
+    bio: "Optimizing global operations and supply chain efficiency.",
+    handle: "hadi"
+  },
+  {
+    name: "Alireza Aleyasin",
+    role: "Medical Adviser",
+    image: "/images/team/alireza.png",
+    bio: "Ensuring products meet the highest medical and health standards.",
+    handle: "alireza"
+  },
+  {
+    name: "Omid Sangari",
+    role: "Natural Health product Advisor",
+    image: "/images/team/omid.png",
+    bio: "Expert guidance on natural health product regulations and benefits.",
+    handle: "omid"
+  },
+  {
+    name: "Sheila Malek",
+    role: "Natural Health product Advisor",
+    image: "/images/team/shelia.png", // Filename is shelia.png
+    bio: "Specializing in natural product efficacy and consumer health.",
+    handle: "sheila"
+  }
 ];

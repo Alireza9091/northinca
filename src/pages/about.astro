@@ -1,66 +1,75 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import FeatureCard from '../components/FeatureCard.astro';
+import { InfoCard, ValueCard, TeamCard, FadeIn } from '../components/react/AboutComponents';
 import { mission, vision, values, csr, team } from '../data/about';
+
 ---
 
-<BaseLayout title="About Us">
-  <div class="bg-gray-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading title="Who We Are" center />
-      
-      <!-- Mission & Vision -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <h3 class="text-2xl font-bold text-[var(--color-primary)] mb-4">Our Mission</h3>
-          <p class="text-gray-600 leading-relaxed text-lg">{mission}</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <h3 class="text-2xl font-bold text-[var(--color-primary)] mb-4">Our Vision</h3>
-          <p class="text-gray-600 leading-relaxed text-lg">{vision}</p>
-        </div>
+<BaseLayout title="About Us" description="Learn about Northinca's mission, vision, and team.">
+  <div class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      <div class="text-center mb-16">
+        <SectionHeading title="About Northinca" subtitle="Our Story & Philosophy" center />
       </div>
-      
-      <!-- Values -->
-      <div class="mb-20">
-        <SectionHeading title="Our Values" center />
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {values.map(value => (
-            <FeatureCard title={value.title} description={value.content} />
-          ))}
-        </div>
-      </div>
+    
+    <!-- Mission & Vision -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <InfoCard client:visible title="Our Mission" content={mission} delay={0.1} />
+      <InfoCard client:visible title="Our Vision" content={vision} delay={0.2} />
+    </div>
 
-      <!-- CSR -->
-      <div class="bg-white rounded-3xl p-12 mb-20 shadow-sm border border-gray-100">
-        <SectionHeading title="Corporate Social Responsibility" />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {csr.map(item => (
-            <div>
-              <h4 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
-              <p class="text-gray-600 leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Team -->
-      <div>
-        <SectionHeading title="Leadership Team" center />
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {team.map(member => (
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
-              <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">
-                {/* Fallback avatar if no image */}
-                👤
-              </div>
-              <h4 class="font-bold text-gray-900">{member.name}</h4>
-              <p class="text-sm text-[var(--color-primary)] font-medium mt-1">{member.role}</p>
-            </div>
-          ))}
-        </div>
+    <!-- Values -->
+    <div>
+      <SectionHeading title="Our Values" center />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        {values.map((value, index) => (
+          <ValueCard 
+            client:visible 
+            title={value.title} 
+            content={value.content} 
+            delay={index * 0.1} 
+          />
+        ))}
       </div>
     </div>
+
+    <!-- CSR -->
+    <FadeIn client:visible className="bg-gray-50 p-10 rounded-3xl border border-gray-200 mt-20">
+       <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-gray-900">Corporate Social Responsibility</h2>
+          <div class="w-16 h-1 bg-[var(--color-primary)] mx-auto mt-4 rounded-full"></div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+          {csr.map((item) => (
+            <div class="group">
+              <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[var(--color-primary)] transition-colors">{item.title}</h4>
+              <p class="text-gray-700 leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+       </div>
+    </FadeIn>
+
+    <!-- Leadership Team -->
+    <div class="mt-20">
+      <SectionHeading title="Leadership Team" center />
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-20 -mt-8">
+        Our experienced team is dedicated to expanding your health and beauty market in Canada through expert distribution.
+      </p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
+        {team.map((member, index) => (
+          <TeamCard
+            client:visible
+            name={member.name}
+            role={member.role}
+            image={member.image}
+            bio={member.bio}
+            delay={index * 0.1}
+          />
+        ))}
+      </div>
+    </div>
+
   </div>
 </BaseLayout>
