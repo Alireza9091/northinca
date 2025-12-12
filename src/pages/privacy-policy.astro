@@ -1,26 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { privacyPolicyContent } from '../data/privacyPolicy';
-import { marked } from 'marked'; // Need to check if I can use this or just render text. 
-// I didn't install marked. I'll just render text with whitespace or use a simple split if it's markdown.
-// Or I can install marked? 
-// User said "Keep it in a data file (or markdown)".
-// I'll render it as pre-wrap text or convert simple MD to HTML using a regex helper if needed, or just standard text for now since it's a placeholder.
-// The placeholder is markdown-like.
-// I will just use style="white-space: pre-wrap;" to respect line breaks.
+import { privacyPolicySections } from '../data/privacyPolicy';
 ---
 
 <BaseLayout title="Privacy Policy">
-  <div class="py-16 bg-white">
+  <div class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-[#233a6c] mb-12 text-center">Privacy Policy</h1>
       
-      <div class="prose prose-lg max-w-none text-gray-600">
-        <!-- Render content preserving whitespace -->
-        <div class="whitespace-pre-wrap font-sans leading-relaxed">
-          {privacyPolicyContent}
-        </div>
+      <div class="space-y-12">
+        {privacyPolicySections.map((section) => (
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">{section.title}</h2>
+            <div class="prose prose-lg text-gray-600 leading-relaxed whitespace-pre-wrap font-sans">
+              {section.content}
+            </div>
+          </section>
+        ))}
       </div>
     </div>
   </div>
 </BaseLayout>
+
