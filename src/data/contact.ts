@@ -8,11 +8,6 @@ export const contactPage = {
 };
 
 export const formConfig = {
-  endpoint: "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse", // Placeholder
-  fields: {
-    name: "entry.123456789", // Placeholder ID
-    email: "entry.987654321", // Placeholder ID
-    subject: "entry.112233445", // Placeholder ID
-    message: "entry.556677889", // Placeholder ID
-  }
+  endpoint: "https://api.web3forms.com/submit",
+  successRedirect: false, // Handle success in-page
 };
