@@ -6,11 +6,11 @@ import { WorldMap } from '../components/react/WorldMap';
 import { keyServices, serviceScopes } from '../data/services';
 
 const mapDots = [
-  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 51.50, lng: -0.12 } }, // Toronto -> London
-  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 35.67, lng: 139.65 } }, // Toronto -> Tokyo
-  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 25.20, lng: 55.27 } }, // Toronto -> Dubai
-  { start: { lat: 43.65, lng: -79.38 }, end: { lat: -33.86, lng: 151.20 } }, // Toronto -> Sydney
-  { start: { lat: 43.65, lng: -79.38 }, end: { lat: 48.85, lng: 2.35 } }, // Toronto -> Paris
+  { start: { lat: 51.50, lng: -0.12 }, end: { lat: 43.65, lng: -79.38 } }, // London -> Toronto
+  { start: { lat: 35.67, lng: 139.65 }, end: { lat: 43.65, lng: -79.38 } }, // Tokyo -> Toronto
+  { start: { lat: 25.20, lng: 55.27 }, end: { lat: 43.65, lng: -79.38 } }, // Dubai -> Toronto
+  { start: { lat: -33.86, lng: 151.20 }, end: { lat: 43.65, lng: -79.38 } }, // Sydney -> Toronto
+  { start: { lat: 48.85, lng: 2.35 }, end: { lat: 43.65, lng: -79.38 } }, // Paris -> Toronto
 ];
 ---
 
@@ -45,15 +45,17 @@ const mapDots = [
       <div>
         <SectionHeading title="Scope of Services" center />
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {serviceScopes.map(scope => (
-            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-              <h3 class="text-2xl font-bold text-[var(--color-primary)] mb-6 border-b border-gray-200 pb-2">
+          {serviceScopes.map((scope, index) => (
+            <div class="service-scope-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute -top-24 -right-24 w-48 h-48 bg-[var(--color-primary)] rounded-full opacity-5 group-hover:scale-150 transition-transform duration-700"></div>
+              <h3 class="text-2xl font-bold text-[var(--color-primary)] mb-6 border-b border-gray-200 pb-2 relative z-10">
                 {scope.category}
               </h3>
-              <ul class="space-y-3">
-                {scope.items.map(item => (
-                  <li class="flex items-center text-gray-700">
-                    <span class="mr-3 text-green-500">✓</span>
+              <ul class="space-y-3 relative z-10">
+                {scope.items.map((item) => (
+                  <li class="flex items-center text-gray-700 scope-item">
+                    <span class="mr-3 text-green-500 text-xl">✓</span>
                     {item}
                   </li>
                 ))}
@@ -65,4 +67,57 @@ const mapDots = [
 
     </div>
   </div>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Run on initial load
+    const initAnimations = () => {
+      const cards = document.querySelectorAll('.service-scope-card');
+      
+      cards.forEach((card, index) => {
+        // Animate the card itself
+        gsap.from(card, {
+          opacity: 0,
+          y: 50,
+          scale: 0.95,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          delay: index * 0.15
+        });
+
+        // Animate items within the card
+        const items = card.querySelectorAll('.scope-item');
+        gsap.from(items, {
+          opacity: 0,
+          x: -20,
+          duration: 0.5,
+          ease: 'power2.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          delay: (index * 0.15) + 0.3
+        });
+      });
+    };
+
+    // Run on page load and navigation
+    document.addEventListener('astro:page-load', initAnimations);
+    
+    // Also run immediately in case astro:page-load already fired
+    if (document.readyState === 'complete') {
+      initAnimations();
+    }
+  </script>
 </BaseLayout>
