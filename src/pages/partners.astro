@@ -10,13 +10,13 @@ import { partners } from '../data/partners';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading title="Our Partners" subtitle="Collaborating for global success" center />
       
-      <div class="mt-20 space-y-32">
+      <div class="mt-20 space-y-48">
         {partners.map((partner, index) => (
           <FadeIn client:visible delay={index * 0.1}>
-            <div class={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <div class={`flex flex-col lg:flex-row gap-16 lg:gap-24 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
               
               {/* Image Section */}
-              <div class="w-full lg:w-1/2">
+              <div class="w-full lg:w-5/12">
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
                     <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
                     <img 
@@ -28,7 +28,7 @@ import { partners } from '../data/partners';
               </div>
 
               {/* Content Section */}
-              <div class="w-full lg:w-1/2">
+              <div class="w-full lg:w-7/12">
                 <h3 class="text-3xl font-bold text-[#233a6c] mb-6">{partner.name}</h3>
                 <div class="prose prose-lg text-gray-600 leading-relaxed">
                   <p>{partner.description}</p>
