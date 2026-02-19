@@ -9,7 +9,7 @@ export const partners: Partner[] = [
   {
     name: "Oceanpharma",
     description:
-      "Oceanpharma was founded in 1978 by Christian Günther near Hamburg. His motto: We help nature to act. His goal: to develop products that … work, of course!Based on this philosophy, the company has been looking for special natural substances for your health ever since.Our oceans form an almost inexhaustible reservoir of potential new active ingredients. Oceanpharma use the power of nature for people’s health and natural appearance. To this end, they have been researching the extraordinary potential of our oceans for over four decades and producing products that work … naturally!",
+      "Oceanpharma was founded in 1978 by Christian Günther near Hamburg. His motto: We help nature to act. His goal: to develop products that … work, of course! Based on this philosophy,the company has been looking for special natural substances for your health ever since.Our oceans form an almost inexhaustible reservoir of potential new active ingredients. Oceanpharma use the power of nature for people’s health and natural appearance. To this end, they have been researching the extraordinary potential of our oceans for over four decades and producing products that work … naturally!",
     image: "/images/partners/oceanpharma.png",
     website: "#",
   },
