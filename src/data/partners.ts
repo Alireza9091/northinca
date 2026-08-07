@@ -38,7 +38,7 @@ export const partners: Partner[] = [
     name: "Spirularin",
     description:
       "We believe, you need to go deeper to come up with the best solutions. Which is why we keep researching where others reach their limits. That’s how we discovered the amazing defence mechanisms of the 3.6-billion-year-old microalga Spirulina platensis and harnessed its power in the unique active agent Spiralin®. Professional foot care with active microalgae protection.  Spirularin® repairs, vitalizes and protects. Our products have been developed for the special care of problem skin, feet and nails in collaboration with dermatologists and podiatrists.",
-    image: "/images/partners/spirularin.jpg",
+    image: "/images/partners/Spirularin.jpg",
     website: "#",
   },
   {
