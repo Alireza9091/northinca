@@ -31,7 +31,7 @@ export const partners: Partner[] = [
     name: "Inter Cosmetiques",
     description:
       "Inter Cosmetiques is a private label cosmetic manufacturing company focused on delivering exceptional skincare and personal care products to better support our clients for the global marketplace. Creates safe skincare and personal care products, Inter Cosmetiques’ R&D team is composed of highly knowledgeable researchers, chemists, scientists and technicians that develop formulations current with today’s industry standards. Formulations are perfected in our laboratories, which are designed to conduct product testing during each stage within product manufacturing. Production is carried out in Health Canada licensed facilities, adhering to strict GMP standards and environment. You can rest assured as our highly trained production team is fully supervised and documented by our QA/QC staff who observe the highest standards of quality control and product testing. We’re on the leading edge of today’s latest trends and innovations in skincare. Our boutique approach lets you hit the ground running by fulfilling new hot industry trends to get you to market faster than your competitors.",
-    image: "/images/partners/Inter-Cosmetiques-1.jpeg",
+    image: "/images/partners/Inter.png",
     website: "#",
   },
   {
