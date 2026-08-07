@@ -6,7 +6,6 @@ meexport interface Partner {
 }
 
 export const partners: Partner[] = [
-  
   {
     name: "Oxygen Botanicals",
     description:
