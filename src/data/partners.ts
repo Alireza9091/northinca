@@ -15,17 +15,17 @@ export const partners: Partner[] = [
     website: "#",
   },
   {
-    name: "NOV Natural Organic Vegan",
-    description:
-      "NOV Natural Organic Vegan offers a range of high-performance skincare and personal care products developed with advanced formulations that combine high-quality, certified organic plant extracts — cultivated without pesticides, harmful chemicals, or contaminated soil. Each product is Vegan-certified, cruelty-free, and eco-friendly, created under sustainable production standards. Formulas are free from all harmful substances such as parabens, sulfates, silicones, and synthetic fragrances. Enriched with microbiome-supporting natural prebiotics, NOV products strengthen the skin’s natural balance and resilience. All formulations are dermatologically tested and proven to be safe even for highly sensitive or compromised skin.",
-    image: "/images/partners/Nov_log_buyuk.jpg",
-    website: "#",
-  },
-  {
     name: "Cliniceutica",
     description:
       " Clinceutica Canada’s research and development teams considers as first priority to provide skin specialists with high-performing and safe dermocosmetic products adapted to the requirements of each consumer. We strive to offer users of Cliniceutica Canada brand a pleasant experience with our products because each skin is unique and requires specific needs.Expectations vary depending on each consumer who requires guaranteed efficiency as well.",
     image: "/images/partners/clinica.jpeg",
+    website: "#",
+  },
+  {
+    name: "NOV Natural Organic Vegan",
+    description:
+      "NOV Natural Organic Vegan offers a range of high-performance skincare and personal care products developed with advanced formulations that combine high-quality, certified organic plant extracts — cultivated without pesticides, harmful chemicals, or contaminated soil. Each product is Vegan-certified, cruelty-free, and eco-friendly, created under sustainable production standards. Formulas are free from all harmful substances such as parabens, sulfates, silicones, and synthetic fragrances. Enriched with microbiome-supporting natural prebiotics, NOV products strengthen the skin’s natural balance and resilience. All formulations are dermatologically tested and proven to be safe even for highly sensitive or compromised skin.",
+    image: "/images/partners/Nov_log_buyuk.jpg",
     website: "#",
   },
   {
