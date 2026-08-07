@@ -50,17 +50,17 @@ export const partners: Partner[] = [
     website: "#",
   },
   {
-    name: "SOPHIE LA GIRAFE",
-    description:
-      "Sophie La Girafe offers a certified organic health and beauty line for babies, featuring ultra-gentle, natural formulas. Key ingredients include organic white tea to protect and fortify sensitive skin, combined with safe, hypoallergenic, and dermatologically tested components free from harsh chemicals, artificial parabens, and synthetic perfumes.",
-    image: "/images/partners/sophi-la-girafe.svg",
-    website: "#",
-  },
-  {
     name: "Emmebi Italia",
     description:
       "Emmebi Italia is an Italian professional hair cosmetics brand that combines nature, beauty, and professional salon expertise. Founded in 1990 in Bergamo, the company was established with the aim of providing high-quality professional solutions for scalp and hair care while maintaining respect for both people and the environment. Drawing inspiration from nature, Emmebi Italia develops product lines that celebrate individuality, natural beauty, and the specific needs of different hair types. The brand is recognized for its approach to combining innovation, quality, and simplicity. Over the years, Emmebi Italia has developed an extensive portfolio of professional collections covering hair color, hair treatments, maintenance and care products, styling, scalp care, and wellness-oriented rituals for both professional salons and home use. Its philosophy is based on the belief that beauty should be authentic, respectful, and naturally connected to the world around us. Emmebi Italia also places considerable importance on craftsmanship, distinctive packaging, and carefully developed product identities, allowing each collection to express its own character and visual concept. Driven by a culture of respect, collaboration, and lasting relationships, the company continues to support professional hairstylists through products and concepts focused on performance, care, and a distinctive Italian approach to beauty.",
     image: "/images/partners/Emmebi.png",
+    website: "#",
+  },
+  {
+    name: "SOPHIE LA GIRAFE",
+    description:
+      "Sophie La Girafe offers a certified organic health and beauty line for babies, featuring ultra-gentle, natural formulas. Key ingredients include organic white tea to protect and fortify sensitive skin, combined with safe, hypoallergenic, and dermatologically tested components free from harsh chemicals, artificial parabens, and synthetic perfumes.",
+    image: "/images/partners/sophi-la-girafe.svg",
     website: "#",
   },
 ];
