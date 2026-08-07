@@ -59,7 +59,7 @@ export const partners: Partner[] = [
     name: "SOPHIE LA GIRAFE",
     description:
       "Sophie La Girafe offers a certified organic health and beauty line for babies, featuring ultra-gentle, natural formulas. Key ingredients include organic white tea to protect and fortify sensitive skin, combined with safe, hypoallergenic, and dermatologically tested components free from harsh chemicals, artificial parabens, and synthetic perfumes.",
-    image: "/images/partners/sophi-la-girafe.svg",
+    image: "/images/partners/sophie-la-girafe.svg",
     website: "#",
   },
 ];
